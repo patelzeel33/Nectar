@@ -189,11 +189,10 @@ const ContactSectionCreative: React.FC = () => {
                     <MapPin className="w-6 h-6 text-red-200 mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold group-hover:text-white transition-colors">
-                        Our Office
+                        Our Headquater
                       </h3>
                       <p className="text-red-200">
-                        501, Broadway Signature, Opp. Sevasi-Bhayli Canal Ring
-                        Road, Vadodara-391101
+                        508 Elite Mangnum , Opp Solaris business hub , Near bhuyangdev cross road , Ahmedabad
                       </p>
                     </div>
                   </Link>
@@ -206,7 +205,7 @@ const ContactSectionCreative: React.FC = () => {
                       <h3 className="font-semibold group-hover:text-white transition-colors">
                         Call Us
                       </h3>
-                      <p className="text-red-200">+91 98765 43210</p>
+                      <p className="text-red-200">+91 96625 12685</p>
                     </div>
                   </Link>
                   <Link
@@ -218,7 +217,7 @@ const ContactSectionCreative: React.FC = () => {
                       <h3 className="font-semibold group-hover:text-white transition-colors">
                         Email Us
                       </h3>
-                      <p className="text-red-200">sales@harbourfume.com</p>
+                      <p className="text-red-200">info@nectarengg.com</p>
                     </div>
                   </Link>
                 </motion.div>

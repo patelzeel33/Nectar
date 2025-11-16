@@ -16,7 +16,7 @@ const WhatsAppAlternatives: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "7878937373";
+    const phoneNumber = "9662512685";
     const message = "Hello! I'd like to get in touch.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
@@ -25,11 +25,11 @@ const WhatsAppAlternatives: React.FC = () => {
   };
 
   const handleCallClick = () => {
-    window.location.href = "tel:+917878937373";
+    window.location.href = "tel:+919662512685";
   };
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:sales@harbourfume.com";
+    window.location.href = "mailto:info@nectarengg.com";
   };
 
   const contactOptions: ContactOption[] = [

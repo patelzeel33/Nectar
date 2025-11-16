@@ -143,7 +143,7 @@ const HeroSection: React.FC = () => {
             whileHover="hover"
           >
             <Image
-              src="/Picture1.jpg"
+              src="/hero.jpg"
               alt="Aerial view of shipping port with cargo containers and logistics hub"
               className="w-full h-[400px] object-cover"
               width={1000}
@@ -193,7 +193,7 @@ const HeroSection: React.FC = () => {
             className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent leading-tight"
             variants={itemVariants}
           >
-            Nectar Engineering Private Limited
+            Nectar Engineering India Private Limited
           </motion.h1>
 
           {/* Description */}
@@ -217,8 +217,16 @@ Trusted across major industries, we ensure safe, high-quality, and timely projec
               whileHover="hover"
               whileTap="tap"
             >
-              <Link href={"/contact"}>Get a Quote </Link>
+              <Link href={"/contact"}>Contact Now</Link>
             </motion.button>
+            {/* <motion.button
+              className="bg-white cursor-pointer hover:bg-gray-50 text-slate-700 font-medium px-8 py-3 rounded-lg border border-gray-200 transition-colors duration-200"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <Link href={"/contact"}>Get a Quote</Link>
+            </motion.button> */}
           </motion.div>
         </motion.div>
       </div>

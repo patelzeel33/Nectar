@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} w-full bg-gradient-to-br from-sky-50 via-blue-100 to-cyan-100 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} w-full bg-gradient-to-br from-red-50 via-red-100 to-red-100 antialiased`}
       >
         <div className="h-20"></div>
         <Navbar />

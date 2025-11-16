@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { Menu, Shield, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavItem {
   href: string;
@@ -70,39 +71,26 @@ const Navbar: React.FC = () => {
       initial="hidden"
       animate={showNavbar ? "visible" : "hidden"}
     >
-      {/* Gradient overlay for extra depth */}
+      {/* Gradient overlay */}
       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-400/5 via-red-500/3 to-red-400/5 pointer-events-none" />
 
       <div className="relative px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+
+          {/* LOGO */}
           <Link href="/" className="flex items-center group">
-            <motion.div
-              className="flex items-center space-x-3 cursor-pointer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <motion.div
-                className="relative w-10 h-10 bg-gradient-to-br from-red-400 to-red-500 rounded-2xl flex items-center justify-center shadow-lg shadow-red-400/25"
-                whileHover={{
-                  rotate: [0, -5, 5, 0],
-                  transition: { duration: 0.5 },
-                }}
-              >
-                <Shield className="w-5 h-5 text-white" />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent pointer-events-none" />
-              </motion.div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-slate-800 tracking-tight">
-                  Nectar 
-                </span>
-                <div className="h-0.5 w-0 bg-gradient-to-r from-red-400 to-red-500 group-hover:w-full transition-all duration-300" />
-              </div>
-            </motion.div>
+            <Image
+              src="/logo.png"
+              alt="logo"
+              height={75}
+              width={200}
+              className="h-[65px] w-[100px] py-1 md:h-[75px] md:w-[100px]"
+            />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center space-x-1">
+
             {navItems.map((item, index) => (
               <motion.div
                 key={item.href}
@@ -122,9 +110,9 @@ const Navbar: React.FC = () => {
               </motion.div>
             ))}
 
-            {/* CTA Buttons */}
+            {/* Contact Button */}
             <div className="flex items-center space-x-2 ml-6 pl-6 border-l border-slate-200/60">
-              <Link href={"/contact"}>
+              <Link href="/contact">
                 <motion.button
                   className="px-6 py-2 cursor-pointer text-[16px] font-medium text-white bg-gradient-to-r from-red-400 to-red-500 rounded-full shadow-lg shadow-red-400/25 hover:shadow-red-400/40 hover:from-red-500 hover:to-red-600 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
@@ -136,7 +124,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
           <div className="md:hidden">
             <motion.button
               onClick={toggleMenu}
@@ -168,10 +156,11 @@ const Navbar: React.FC = () => {
               </AnimatePresence>
             </motion.button>
           </div>
+
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -185,8 +174,8 @@ const Navbar: React.FC = () => {
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            {/* Gradient overlay for mobile menu */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-400/5 via-red-500/3 to-red-400/5 pointer-events-none" />
+
             <div className="p-6 space-y-4">
               {navItems.map((item, index) => (
                 <motion.div
@@ -205,10 +194,10 @@ const Navbar: React.FC = () => {
                 </motion.div>
               ))}
 
-              <div className="pt-4 border-t  border-slate-200/60 flex flex-col space-y-3">
-                <Link href={"/contact"}>
+              <div className="pt-4 border-t border-slate-200/60 flex flex-col space-y-3">
+                <Link href="/contact">
                   <motion.button
-                    className="w-full cursor-pointer  text-sm font-medium text-white bg-gradient-to-r from-red-400 to-red-500 px-4 py-3 rounded-xl shadow-lg shadow-red-400/25 hover:from-red-500 hover:to-red-600 transition-all duration-300"
+                    className="w-full cursor-pointer text-sm font-medium text-white bg-gradient-to-r from-red-400 to-red-500 px-4 py-3 rounded-xl shadow-lg shadow-red-400/25 hover:from-red-500 hover:to-red-600 transition-all duration-300"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}

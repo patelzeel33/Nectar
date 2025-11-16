@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useInView, Variants } from "motion/react";
-import { Leaf, CheckCircle, Clock, Shield } from "lucide-react";
+import { Leaf, CheckCircle, Clock, Shield, Star, Drill } from "lucide-react";
 
 interface WhyChooseUsItem {
   id: number;
@@ -18,26 +18,26 @@ const WhyChooseUsSection: React.FC = () => {
   const whyChooseUsItems: WhyChooseUsItem[] = [
     {
       id: 1,
-      title: "Eco-Friendly Chemicals",
-      description: "Low-toxicity options that meet environmental standards.",
-      icon: Leaf,
+      title: "Proven Expertise",
+      description: "Delivering Excellence Through Experience.",
+      icon: Star,
     },
     {
       id: 2,
-      title: "Certified Staff",
-      description: "Trained technicians with verified credentials.",
+      title: "Skilled Workforce",
+      description: "Skilled People. Superior Results.",
       icon: CheckCircle,
     },
     {
       id: 3,
-      title: "Timely Service",
-      description: "Scheduling that works with your operations.",
-      icon: Clock,
+      title: "Advanced Equipment",
+      description: "Powered by Modern Technology",
+      icon: Drill,
     },
     {
       id: 4,
-      title: "Guaranteed Safety",
-      description: "Protocols and PPE for assured site safety.",
+      title: "Safety First",
+      description: "Committed to Safety Always",
       icon: Shield,
     },
   ];
@@ -65,14 +65,14 @@ const WhyChooseUsSection: React.FC = () => {
       {/* Why Choose Us Section */}
       <motion.div
         ref={whyUsRef}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12"
         initial="hidden"
         animate={isWhyUsInView ? "visible" : "hidden"}
         variants={containerVariants}
       >
         <div className="text-center mb-16">
           <motion.h2
-            className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-sky-600 via-blue-700 to-indigo-800 bg-clip-text text-transparent leading-tight mb-4"
+            className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent leading-tight mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={isWhyUsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -103,10 +103,10 @@ const WhyChooseUsSection: React.FC = () => {
               }}
             >
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full hover:shadow-lg transition-shadow duration-300 relative overflow-hidden">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
-                  <item.icon className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                  <item.icon className="w-8 h-8 text-red-600" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-800 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-red-800 transition-colors duration-300">
                   {item.title}
                 </h3>
                 <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">

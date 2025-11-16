@@ -35,26 +35,26 @@ function IndustriesSection() {
   const industries: Industry[] = [
     {
       id: 1,
-      title: "Warehouses",
-      image: "/warehouses.png",
+      title: "Reliance Industries",
+      image: "/reliance.png",
       alt: "Large warehouse interior with high ceilings and storage systems",
     },
     {
       id: 2,
-      title: "Logistics Hubs",
-      image: "/logistics.png",
+      title: "Adani Industries",
+      image: "/adani.jpg",
       alt: "Blue shipping containers in organized rows at logistics facility",
     },
     {
       id: 3,
-      title: "Cargo Empty Containers",
-      image: "/cargo.png",
+      title: "Aarti Industries",
+      image: "/aartijpg.jpg",
       alt: "Empty blue cargo containers stacked and ready for fumigation",
     },
     {
       id: 4,
-      title: "Shipping Containers",
-      image: "/Shipping.png",
+      title: "Nayara Industries",
+      image: "/nayara.jpg",
       alt: "Blue shipping containers at port facility",
     },
   ];
@@ -71,7 +71,7 @@ function IndustriesSection() {
       >
         <div className="text-center mb-16">
           <motion.h2
-            className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-sky-600 via-blue-700 to-indigo-800 bg-clip-text text-transparent leading-tight mb-4"
+            className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-ref-600 via-red-700 to-indigo-800 bg-clip-text text-transparent leading-tight mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={isIndustriesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -84,7 +84,7 @@ function IndustriesSection() {
             animate={isIndustriesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            Specialized fumigation for complex operations.
+            Specialized Services for Critical Industries.
           </motion.p>
         </div>
 

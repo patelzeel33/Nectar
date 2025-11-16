@@ -12,7 +12,10 @@ import {
 import Link from "next/link";
 
 const Services = [
-  { Link: "/services/container", data: "Services" },
+  { Link: "/services/Pipng", data: "Piping" },
+  { Link: "/services/Industrial Structure", data: "Industrial Structure" },
+  { Link: "/services/Equipment", data: "Equipment" },
+  { Link: "/services/Plant Turnaround / Shutdowm", data: "Plant Turnaround / Shutdowm" },
 ];
 
 const Footer: React.FC = () => {
@@ -76,18 +79,18 @@ const Footer: React.FC = () => {
               </h4>
               <div className="space-y-2">
                 <Link
-                  href="tel:+917878937373"
+                  href="tel:+919662512685"
                   className="flex items-center space-x-2 text-slate-600 text-sm"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>+91 11111 11111</span>
+                  <span>+91 96625 12685</span>
                 </Link>
                 <a
                   href="mailto:abhithakkar466@gmail.com"
                   className="flex items-center space-x-2 text-slate-600 text-sm"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>sales@nectar.com</span>
+                  <span>Info@nectarengg.com</span>  
                 </a>
               </div>
             </div>
@@ -97,12 +100,12 @@ const Footer: React.FC = () => {
               <h4 className="font-semibold text-slate-800 text-sm">Address</h4>
               <Link
                 target="_blank"
-                href={"https://maps.app.goo.gl/RKg5ajdUmky28FDw8"}
+                href={"https://maps.app.goo.gl/NsjesoSvodnHyZLo9"}
                 className="flex items-start space-x-2 text-slate-600 text-sm"
               >
                 <MapPin className="w-10 h-10 mt-0.5" />
                 <span>
-                  Gujarat
+                508 Elite Mangnum , Opp Solaris business hub , Near bhuyangdev cross road , Ahmedabad
                 </span>
               </Link>
             </div>
@@ -112,7 +115,7 @@ const Footer: React.FC = () => {
               <h4 className="font-semibold text-slate-800 text-sm">Hours</h4>
               <div className="flex items-center space-x-2 text-slate-600 text-sm">
                 <Clock className="w-4 h-4" />
-                <span>Mon-Sat: 8:00 AM - 6:00 PM</span>
+                <span>Mon-Sat: 10:00 AM - 6:00 PM</span>
               </div>
             </div>
 

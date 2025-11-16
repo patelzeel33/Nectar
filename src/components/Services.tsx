@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useInView, useAnimation, Variants } from "motion/react";
+import { motion, useInView, useAnimation, Variants, pipe } from "motion/react";
 import {
   Package,
   ShieldCheck,
@@ -11,6 +11,9 @@ import {
   Warehouse,
   Container,
   ArrowRight,
+  Shapes,
+  FactoryIcon,
+  Waves,
 } from "lucide-react";
 
 interface Service {
@@ -102,76 +105,40 @@ const ServicesSection: React.FC = () => {
   const services: Service[] = [
     {
       id: 1,
-      title: "Export & Import Container Treatment",
+      title: "Piping",
       description:
-        "Certified treatments for global trade, ensuring smooth customs clearance.",
-      icon: Container,
+        "Fabrication, erection, and modification of all IBR/NIBR and alloy-material piping systems.",
+      icon: Waves,
       color: "#ff0000",
       bgColor: "#fedbe0ff",
     },
     {
       id: 2,
-      title: "Warehouse & Storage Sanitization",
+      title: "Industrial Structure",
       description:
-        "Safe and effective sanitization to protect goods in all storage facilities.",
+        "Fabrication and erection of heavy structures, sheds, and modular assemblies.",
       icon: Warehouse,
       color: "#ff0000",
       bgColor: "#fedbe0ff",
     },
     {
       id: 3,
-      title: "On-Site Cargo Treatment",
+      title: "Equipment",
       description:
-        "Flexible, certified on-site treatment with fast turnaround times.",
-      icon: MapPin,
+        "Erection and alignment of static/rotating equipment, tanks, exchangers, and boilers.",
+      icon: Shapes,
       color: "#ff0000",
       bgColor: "#fedbe0ff",
     },
     {
       id: 4,
-      title: "ISPM-15 Wood Packaging Treatment",
+      title: "Plant Turnaround / Shutdowm",
       description:
-        "Certified heat treatment for ISPM-15 wood packaging compliance.",
-      icon: Package,
+        "Complete turnaround jobs including revamps, modifications, and equipment replacement.",
+      icon: FactoryIcon,
       color: "#ff0000",
       bgColor: "#fedbe0ff",
-    },
-    {
-      id: 5,
-      title: "Agricultural Commodity Treatment",
-      description:
-        "Comprehensive risk management to ensure agricultural export readiness.",
-      icon: Leaf,
-      color: "#ff0000",
-      bgColor: "#fedbe0ff",
-    },
-    {
-      id: 6,
-      title: "Phytosanitary Certificate Support",
-      description:
-        "Full support for obtaining phytosanitary certificates for exports.",
-      icon: FileCheck,
-      color: "#ff0000",
-      bgColor: "#fedbe0ff",
-    },
-    {
-      id: 7,
-      title: "Vessel Sanitization",
-      description:
-        "Specialized sanitization for ships and cargo holds for maritime compliance.",
-      icon: Ship,
-      color: "#ff0000",
-      bgColor: "#fedbe0ff",
-    },
-    {
-      id: 8,
-      title: "Preventive Treatments",
-      description:
-        "Routine programs to prevent contamination and ensure long-term hygiene.",
-      icon: ShieldCheck,
-      color: "#ff0000",
-      bgColor: "#fedbe0ff",
-    },
+    }
   ];
 
   // Animation variants
@@ -306,7 +273,7 @@ const ServicesSection: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
-            Targeted treatments designed for lasting protection.
+            Engineering Strength. Delivering Reliability.
           </motion.p>
         </motion.div>
 
