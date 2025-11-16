@@ -1,15 +1,13 @@
 "use client";
 import React, { useRef } from "react";
 import {
-  Shield,
-  Building,
-  CheckCircle,
   Phone,
   Mail,
   MapPin,
   Clock,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Services = [
   { Link: "/services/Pipng", data: "Piping" },
@@ -35,15 +33,14 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-8 lg:space-y-0">
           {/* Left Side - Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-              <Shield className="w-6 h-6 text-red-600" />
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-slate-800">
-                Nectar Engineering Private Limited
-              </h3>
-            </div>
+          <div className="flex items-center p-0 m-0 leading-none shrink-0">
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={120}
+              height={120}
+              className="block p-0 m-0 object-contain leading-none"
+            />
           </div>
 
           {/* Center - Quick Links */}
@@ -74,9 +71,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {/* Contact Info */}
             <div className="space-y-3">
-              <h4 className="font-semibold text-slate-800 text-sm">
-                Contact Info
-              </h4>
+              <h4 className="font-semibold text-slate-800 text-sm">Contact Info</h4>
               <div className="space-y-2">
                 <Link
                   href="tel:+919662512685"
@@ -86,11 +81,11 @@ const Footer: React.FC = () => {
                   <span>+91 96625 12685</span>
                 </Link>
                 <a
-                  href="mailto:abhithakkar466@gmail.com"
+                  href="mailto:Info@nectarengg.com"
                   className="flex items-center space-x-2 text-slate-600 text-sm"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>Info@nectarengg.com</span>  
+                  <span>Info@nectarengg.com</span>
                 </a>
               </div>
             </div>
@@ -105,7 +100,8 @@ const Footer: React.FC = () => {
               >
                 <MapPin className="w-10 h-10 mt-0.5" />
                 <span>
-                508 Elite Mangnum , Opp Solaris business hub , Near bhuyangdev cross road , Ahmedabad
+                  508 Elite Mangnum, Opp Solaris Business Hub, Near Bhuyangdev
+                  Cross Road, Ahmedabad
                 </span>
               </Link>
             </div>
@@ -122,12 +118,12 @@ const Footer: React.FC = () => {
             {/* Services */}
             <div className="space-y-3">
               <h4 className="font-semibold text-slate-800 text-sm">Services</h4>
-              <div className="space-y-1 grid grid-cols-1 ">
+              <div className="space-y-1 grid grid-cols-1">
                 {Services.map((service) => (
                   <Link
                     key={service.data}
                     href={service.Link}
-                    className="block mx-1  text-slate-600 hover:text-red-600 transition-colors text-sm"
+                    className="block mx-1 text-slate-600 hover:text-red-600 transition-colors text-sm"
                   >
                     {service.data}
                   </Link>
