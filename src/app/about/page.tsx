@@ -207,8 +207,8 @@ const AboutPage: React.FC = () => {
           <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
             {clients.map((client, i) => (
               <motion.div key={i} className="bg-white text-center p-6 rounded-xl border border-gray-200 shadow-sm" variants={cardVariants} whileHover="hover">
-                <div className="w-full h-[150px] bg-red-100 rounded-lg overflow-hidden flex items-center justify-center mb-4">
-                  <Image src={client.imgSrc} alt={client.title} width={160} height={160} className="object-contain" />
+                <div className="w-full h-[140px] bg-red-100 rounded-lg overflow-hidden flex items-center justify-center mb-4">
+                  <Image src={client.imgSrc} alt={client.title} width={140} height={140} className="object-contain" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-800">{client.title}</h3>
               </motion.div>
