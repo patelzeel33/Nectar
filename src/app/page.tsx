@@ -6,7 +6,7 @@ import ContactSection from "@/components/ContactSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import IndustriesSection from "@/components/IndustriesSection";
 
-export default function SkyShieldHero() {
+export default function Nectar() {
   return (
     <div
       className=" min-h-screen bg-gradient-to-br from-red-50 via-red-100 to-red-100"
