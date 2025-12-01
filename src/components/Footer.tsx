@@ -10,10 +10,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Services = [
-  { Link: "/services/Pipng", data: "Piping" },
-  { Link: "/services/Industrial Structure", data: "Industrial Structure" },
-  { Link: "/services/Equipment", data: "Equipment" },
-  { Link: "/services/Plant Turnaround / Shutdown", data: "Plant Turnaround / Shutdown" },
+  { Link: "/services/piping", data: "Piping" },
+  { Link: "/services/industrial-structure", data: "Industrial Structure" },
+  { Link: "/services/equipment", data: "Equipment" },
+  { Link: "/services/turnaround-shutdown", data: "Plant Turnaround / Shutdown" },
 ];
 
 const Footer: React.FC = () => {
