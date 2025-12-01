@@ -13,7 +13,7 @@ const Services = [
   { Link: "/services/Pipng", data: "Piping" },
   { Link: "/services/Industrial Structure", data: "Industrial Structure" },
   { Link: "/services/Equipment", data: "Equipment" },
-  { Link: "/services/Plant Turnaround / Shutdowm", data: "Plant Turnaround / Shutdowm" },
+  { Link: "/services/Plant Turnaround / Shutdown", data: "Plant Turnaround / Shutdown" },
 ];
 
 const Footer: React.FC = () => {

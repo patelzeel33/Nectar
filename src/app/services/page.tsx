@@ -3,22 +3,18 @@ import React, { useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
 import {
   Shield,
-  Container,
-  Warehouse,
-  MapPin,
-  Package,
-  Leaf,
-  FileCheck,
+  Users,
+  Globe,
+  Award,
   CheckCircle,
   Clock,
-  Globe,
-  Users,
-  Award,
   ArrowRight,
   Zap,
   Sparkles,
-  ShieldCheck,
-  Ship,
+  Wrench,
+  Building2,
+  Cog,
+  RefreshCw,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -33,235 +29,147 @@ interface Service {
   gradient: string;
 }
 
-const ServicesPage: React.FC = () => {
-  const services: Service[] = [
-    {
-      id: "container",
-      title: "Export & Import Container Treatment",
-      description:
-        "Certified & compliant treatments for global trade ensuring zero rejections and smooth customs clearance.",
-      icon: Container,
-      badge: "Global Trade",
-      gradient: "from-red-400 via-red-500 to-red-600",
-      features: [
-        "ISPM-15, AQIS, NPQS Compliant",
-        "Zero Rejection Guarantee",
-        "Complete Documentation",
-        "24/7 Service Availability",
-      ],
-      process: [
-        "Container & cargo inspection",
-        "Secure sealing process",
-        "Controlled sanitization treatment",
-        "Defined exposure period",
-        "Safe aeration & certification",
-      ],
-    },
-    {
-      id: "warehouse",
-      title: "Warehouse & Storage Sanitization",
-      description:
-        "Protecting stored goods with safe, compliant & effective sanitization solutions for all storage facilities.",
-      icon: Warehouse,
-      badge: "Storage Protection",
-      gradient: "from-red-400 via-red-500 to-red-600",
-      features: [
-        "Prevents Contamination",
-        "Export Compliance Certified",
-        "Protects All Inventory Types",
-        "Maintains Facility Hygiene",
-      ],
-      process: [
-        "Site inspection & assessment",
-        "Sealing & preparation",
-        "Controlled treatment application",
-        "Adequate exposure period",
-        "Aeration & safety clearance",
-      ],
-    },
-    {
-      id: "onsite",
-      title: "On-Site Cargo Treatment",
-      description:
-        "Flexible, certified & hassle-free treatment at your location with fast turnaround times.",
-      icon: MapPin,
-      badge: "On-Location",
-      gradient: "from-red-400 via-red-500 to-red-600",
-      features: [
-        "No Transportation Hassles",
-        "Export-Ready Certificates",
-        "Fast & Flexible Service",
-        "Compliance Assured",
-      ],
-      process: [
-        "Site survey & inspection",
-        "Cargo sealing preparation",
-        "Treatment application",
-        "Controlled exposure period",
-        "Aeration & certification",
-      ],
-    },
-    {
-      id: "ispm15",
-      title: "ISPM-15 Wood Packaging Treatment",
-      description:
-        "Certified sanitization & heat treatment for global export compliance of wood packaging materials.",
-      icon: Package,
-      badge: "International Standard",
-      gradient: "from-red-500 via-red-500 to-red-600",
-      features: [
-        "Global Requirement Compliance",
-        "Risk Prevention Certified",
-        "Official ISPM-15 Marking",
-        "Heat & Treatment Options",
-      ],
-      process: [
-        "Wood packaging inspection",
-        "Treatment method selection",
-        "Controlled treatment application",
-        "Quality verification",
-        "Official marking & certification",
-      ],
-    },
-    {
-      id: "agricultural",
-      title: "Agricultural Commodity Treatment",
-      description:
-        "Comprehensive risk management for agricultural commodities ensuring export readiness.",
-      icon: Leaf,
-      badge: "Agri Protection",
-      gradient: "from-red-500 via-red-500 to-red-600",
-      features: [
-        "Bulk Commodity Treatment",
-        "Quarantine Compliance",
-        "Preventive Programs",
-        "In-Transit Solutions",
-      ],
-      process: [
-        "Risk assessment & inspection",
-        "Treatment method selection",
-        "Scientific application",
-        "Quality monitoring",
-        "Certification & documentation",
-      ],
-    },
-    {
-      id: "phytosanitary",
-      title: "Phytosanitary Certificate Support",
-      description:
-        "End-to-end support for obtaining phytosanitary certificates ensuring compliant agricultural exports.",
-      icon: FileCheck,
-      badge: "Documentation",
-      gradient: "from-red-500 via-red-500 to-red-600",
-      features: [
-        "Global Export Requirement",
-        "Customs Clearance Guarantee",
-        "IPPC Compliance",
-        "End-to-End Support",
-      ],
-      process: [
-        "Sanitization & treatment",
-        "Inspection assistance",
-        "Application documentation",
-        "Government coordination",
-        "Certificate delivery",
-      ],
-    },
-    {
-      id: "vessel",
-      title: "Vessel Sanitization",
-      description:
-        "Specialized sanitization services for ships, cargo holds, and vessels ensuring compliant maritime operations and export readiness.",
-      icon: Ship,
-      badge: "Maritime",
-      gradient: "from-red-500 via-red-600 to-red-700",
-      features: [
-        "Cargo Hold & Ship Treatment",
-        "Safe for Crew & Equipment",
-        "Complies with IMO & AQIS Standards",
-        "Effective Against Stored Product Contaminants",
-      ],
-      process: [
-        "Vessel inspection & risk analysis",
-        "Cargo area sealing",
-        "Treatment application under controlled conditions",
-        "Monitored exposure period",
-        "Aeration & safety clearance certification",
-      ],
-    },
-    {
-      id: "preventive",
-      title: "Preventive Treatments",
-      description:
-        "Routine preventive treatment programs designed to stop contamination before it occurs, ensuring long-term protection and hygiene.",
-      icon: ShieldCheck,
-      badge: "Preventive Care",
-      gradient: "from-red-500 via-red-600 to-red-700",
-      features: [
-        "Scheduled Preventive Treatments",
-        "Environmentally Safe Methods",
-        "Customized Programs for Facilities",
-        "Reduces Contamination Risks",
-      ],
-      process: [
-        "Site assessment & risk analysis",
-        "Planning of treatment intervals",
-        "Preventive treatment or barrier application",
-        "Monitoring & documentation",
-        "Ongoing maintenance & reporting",
-      ],
-    },
-  ];
+const services: Service[] = [
+  {
+    id: "piping",
+    title: "Piping",
+    description:
+      "End-to-end piping solutions including fabrication, erection, hydro-testing, and commissioning for process plants, refineries, utilities, and industrial projects.",
+    icon: Wrench,
+    badge: "Process Piping",
+    gradient: "from-red-400 via-red-500 to-red-600",
+    features: [
+      "CS, SS & Alloy Steel Piping",
+      "Shop & Site Fabrication",
+      "Hydro / Pneumatic Testing",
+      "Tie-ins & Revamp Works",
+    ],
+    process: [
+      "Isometric & material review",
+      "Spool fabrication & fit-up",
+      "Erection, alignment & supports",
+      "Non-destructive testing & inspection",
+      "Hydro-testing & system handover",
+    ],
+  },
+  {
+    id: "industrial-structure",
+    title: "Industrial Structure",
+    description:
+      "Design-assist, fabrication and erection of industrial structures like pipe racks, platforms, pedestals, equipment foundations and heavy steel structures.",
+    icon: Building2,
+    badge: "Structural Works",
+    gradient: "from-red-400 via-red-500 to-red-600",
+    features: [
+      "Pipe Racks & Platforms",
+      "Access Walkways & Handrails",
+      "Heavy Structural Erection",
+      "Anchor Bolt & Alignment Accuracy",
+    ],
+    process: [
+      "Drawing & site survey review",
+      "Shop fabrication & surface preparation",
+      "On-site erection & alignment",
+      "Bolt tightening / welding & inspection",
+      "Final punch list & handover",
+    ],
+  },
+  {
+    id: "equipment",
+    title: "Equipment",
+    description:
+      "Installation, alignment and commissioning of static & rotary equipment like pumps, compressors, heat exchangers, columns and tanks.",
+    icon: Cog,
+    badge: "Mechanical Equipment",
+    gradient: "from-red-500 via-red-500 to-red-600",
+    features: [
+      "Static & Rotary Equipment",
+      "Precision Alignment & Grouting",
+      "Nozzle & Piping Interface",
+      "Assisted Commissioning Support",
+    ],
+    process: [
+      "Foundation readiness & level checking",
+      "Equipment placement & rough alignment",
+      "Grouting, final alignment & bolt tightening",
+      "Hook-up with piping & accessories",
+      "Commissioning assistance & performance checks",
+    ],
+  },
+  {
+    id: "turnaround-shutdown",
+    title: "Plant Turnaround / Shutdown",
+    description:
+      "Complete shutdown and turnaround support including planning, execution and commissioning for refineries, chemical, power, and process plants.",
+    icon: RefreshCw,
+    badge: "Shutdown & TA",
+    gradient: "from-red-500 via-red-600 to-red-700",
+    features: [
+      "End-to-End Turnaround Execution",
+      "Multi-Discipline Coordination",
+      "Strict Safety & Permit Compliance",
+      "On-Time Startup Commitment",
+    ],
+    process: [
+      "Scope definition & job listing",
+      "Detailed planning & resource mobilization",
+      "Safe isolation & dismantling",
+      "Repair, replacement & reassembly",
+      "Pre-commissioning, testing & startup support",
+    ],
+  },
+];
 
-  const badgeVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
+const badgeVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
     },
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
-    },
-  };
+  },
+  hover: {
+    scale: 1.05,
+    transition: { duration: 0.2 },
+  },
+};
 
-  // Simple scroll reveal component
-  const ScrollReveal: React.FC<{
-    children: React.ReactNode;
-    delay?: number;
-  }> = ({ children, delay = 0 }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-    return (
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 30 }}
-        animate={
-          isInView
-            ? {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 0.6,
-                  delay: delay * 0.1,
-                  ease: "easeOut",
-                },
-              }
-            : {}
-        }
-      >
-        {children}
-      </motion.div>
-    );
-  };
+// Simple scroll reveal component
+const ScrollReveal: React.FC<{
+  children: React.ReactNode;
+  delay?: number;
+}> = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-red-100 to-red-100">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.6,
+                delay: delay * 0.1,
+                ease: "easeOut",
+              },
+            }
+          : {}
+      }
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const ServicesPage: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-red-100 to-red-100 relative">
       {/* Static Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-red-200/20 to-red-300/10 rounded-full blur-3xl" />
@@ -291,8 +199,10 @@ const ServicesPage: React.FC = () => {
             </div>
 
             <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
-              Trusted engineering partner since 2015, serving 100+ clients. Provide safe, cost-effective, and high-quality services that align with customer needs, ensure timely delivery, and build lasting trust.
-
+              Trusted engineering partner since 2015, delivering piping,
+              structural, equipment and turnaround solutions for process plants,
+              refineries and industrial projects with safety, quality and
+              on-time completion.
             </p>
           </div>
         </ScrollReveal>
@@ -303,8 +213,8 @@ const ServicesPage: React.FC = () => {
             {[
               { icon: Users, label: "Clients Served", value: "100+" },
               { icon: Globe, label: "Years Experience", value: "10+" },
-              { icon: Award, label: "Success Rate", value: "100%" },
-              { icon: Clock, label: "Service Availability", value: "24/7" },
+              { icon: Award, label: "Projects Delivered", value: "250+" },
+              { icon: Clock, label: "Support", value: "24/7" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -329,8 +239,8 @@ const ServicesPage: React.FC = () => {
       </div>
 
       {/* Services Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid  lg:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+        <div className="grid lg:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <ScrollReveal key={service.id} delay={index}>
               <motion.div
@@ -434,7 +344,7 @@ const ServicesPage: React.FC = () => {
 
       {/* Contact CTA Section */}
       <ScrollReveal delay={1}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
           <motion.div
             className="bg-gradient-to-br from-red-600 via-red-600 to-red-700 rounded-3xl p-12 text-center text-white relative overflow-hidden shadow-2xl"
             whileHover={{ scale: 1.02 }}
@@ -450,9 +360,9 @@ const ServicesPage: React.FC = () => {
                   Ready to Get Started?
                 </h2>
                 <p className="text-red-100 text-lg leading-relaxed max-w-3xl mx-auto">
-                  Contact us today for certified compliance solutions that
-                  ensure your cargo meets international standards and passes
-                  customs clearance worldwide with zero rejections.
+                  Talk to us for piping, structural, equipment and turnaround
+                  solutions tailored to your plant. We focus on safe execution,
+                  quality workmanship and timely completion.
                 </p>
               </div>
 
