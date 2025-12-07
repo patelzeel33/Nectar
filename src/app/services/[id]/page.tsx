@@ -15,6 +15,7 @@ import {
   Cog,
   RefreshCw,
 } from "lucide-react";
+import { useParams } from "next/navigation"; // 🔴 IMPORTANT
 
 interface ServiceDetail {
   id: string;
@@ -148,7 +149,6 @@ const services: Record<string, ServiceDetail> = {
   },
 };
 
-// simple motion variants
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -166,28 +166,36 @@ const itemVariants: Variants = {
   },
 };
 
-type PageProps = {
-  params: { id: string };
-};
+const ServiceDetailPage: React.FC = () => {
+  // 🔴 Get the dynamic segment from URL using useParams (App Router)
+  const params = useParams<{ id: string }>();
+  const id = params?.id as string | undefined;
 
-const ServiceDetailPage: React.FC<PageProps> = ({ params }) => {
-  const service = services[params.id];
+  const service = id ? services[id] : undefined;
 
   if (!service) {
-    // fallback for wrong id
+    // Enhanced fallback so you can see what id is actually coming in
     return (
       <div className="min-h-screen flex items-center justify-center bg-red-50 px-4">
-        <div className="max-w-md w-full text-center bg-white shadow-lg rounded-2xl p-8 border border-red-100">
-          <h1 className="text-2xl font-bold text-red-700 mb-2">
+        <div className="max-w-md w-full text-center bg-white shadow-lg rounded-2xl p-8 border border-red-100 space-y-3">
+          <h1 className="text-2xl font-bold text-red-700">
             Service Not Found
           </h1>
-          <p className="text-slate-600 mb-6">
-            The service you&apos;re looking for doesn&apos;t exist or the link
-            is incorrect.
+          <p className="text-slate-600">
+            URL id:{" "}
+            <span className="font-mono text-red-700">
+              {id ?? "(no id detected)"}
+            </span>
+          </p>
+          <p className="text-slate-500 text-xs">
+            Known ids:{" "}
+            <span className="font-mono">
+              {Object.keys(services).join(", ")}
+            </span>
           </p>
           <Link
             href="/services"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-red-600 text-white font-semibold hover:bg-red-700 transition-colors"
+            className="inline-flex items-center justify-center mt-4 px-5 py-3 rounded-xl bg-red-600 text-white font-semibold hover:bg-red-700 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Services
