@@ -4,13 +4,11 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 // AUTO-GENERATE 62 IMAGES
-const galleryImages = Array.from({ length: 62 }, (_, i) => {
-  const num = String(i + 1).padStart(3, "0"); // image001.jpg → image062.jpg
-  return {
-    src: `/gallery/image${num}.jpg`,
-    alt: `Image ${i + 1}`,
-  };
-});
+const galleryImages = Array.from({ length: 17 }, (_, i) => ({
+  src: `/gallery/image (${i + 1}).jpg`,
+  alt: `Image ${i + 1}`,
+}));
+
 
 // Animation variants
 const containerVariants: Variants = {

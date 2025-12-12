@@ -206,36 +206,6 @@ const ServicesPage: React.FC = () => {
             </p>
           </div>
         </ScrollReveal>
-
-        {/* Stats Section */}
-        <ScrollReveal delay={2}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-            {[
-              { icon: Users, label: "Clients Served", value: "100+" },
-              { icon: Globe, label: "Years Experience", value: "10+" },
-              { icon: Award, label: "Projects Delivered", value: "250+" },
-              { icon: Clock, label: "Support", value: "24/7" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/20"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl mb-4">
-                  <stat.icon className="w-7 h-7 text-red-600" />
-                </div>
-
-                <div className="text-3xl font-bold text-slate-800">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-slate-600 font-medium">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </ScrollReveal>
       </div>
 
       {/* Services Grid */}
@@ -280,26 +250,7 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-8 space-y-6">
-                  {/* Key Features */}
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-4 flex items-center text-lg">
-                      <CheckCircle className="w-5 h-5 text-red-500 mr-3" />
-                      Key Features
-                    </h4>
-                    <div className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center text-slate-600"
-                        >
-                          <div className="w-2 h-2 bg-gradient-to-r from-red-400 to-red-500 rounded-full mr-4 flex-shrink-0" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
+                <div className="p-8 space-y-6"> 
                   {/* Process Steps */}
                   <div>
                     <h4 className="font-bold text-slate-800 mb-4 flex items-center text-lg">
@@ -332,7 +283,7 @@ const ServicesPage: React.FC = () => {
                       whileTap={{ scale: 0.98 }}
                       transition={{ duration: 0.2 }}
                     >
-                      Learn More & Get Quote
+                    More Details
                     </motion.div>
                   </Link>
                 </div>
