@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 // AUTO-GENERATE 62 IMAGES
-const galleryImages = Array.from({ length: 23 }, (_, i) => ({
-  src: `/gallery/image (${i + 1}).jpg`,
+const galleryImages = Array.from({ length: 24 }, (_, i) => ({
+  src: `/gallery/img (${i + 1}).jpg`,
   alt: `Img ${i + 1}`,
 }));
 
